@@ -1,4 +1,4 @@
-# Servidor de Impressora EPSON T20X
+# Servidor de impressão EPSON T20X
 
 Este projeto estabelece um servidor local para a impressora EPSON T20X, permitindo a impressão via rede usando um cabo Serial/USB.
 
