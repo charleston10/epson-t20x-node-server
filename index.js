@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { print } = require('./src/print-service');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post('/print', async (req, res) => {
   try {
