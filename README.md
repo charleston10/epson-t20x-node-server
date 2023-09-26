@@ -38,14 +38,22 @@ O servidor agora deve estar rodando e escutando por trabalhos de impressão na p
 
 Para enviar trabalhos de impressão para o servidor, faça uma requisição POST para a endpoint apropriado com os dados da impressão.
 
-```curl --location 'localhost:3000/print/' \
+```curl
+curl --location 'localhost:3000/print' \
 --header 'Content-Type: application/json' \
 --data '{
-   "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'\''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+   "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+   Lorem Ipsum has been the industry'\''s standard dummy text ever since the 1500s, 
+   when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+   It has survived not only five centuries, but also the leap into electronic typesetting, 
+   remaining essentially unchanged. It was popularised in the 1960s with the release of 
+   Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
+   publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 }'
 ```
 
-```curl --location 'localhost:3000/print/order' \
+```curl
+curl --location 'localhost:3000/print/order' \
 --header 'Content-Type: application/json' \
 --data '{
    "orderId": "988798",
