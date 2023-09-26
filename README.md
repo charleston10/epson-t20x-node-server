@@ -36,11 +36,17 @@ O servidor agora deve estar rodando e escutando por trabalhos de impressão na p
 
 ## 🖨️ Usando o Servidor de Impressão
 
-Para enviar trabalhos de impressão para o servidor, faça uma requisição POST para a endpoint apropriada (por exemplo, `http://localhost:3000/print`) com os dados da impressão.
+Para enviar trabalhos de impressão para o servidor, faça uma requisição POST para a endpoint apropriado com os dados da impressão.
 
-```curl --location 'localhost:3000/print' \
+```curl --location 'localhost:3000/print/' \
 --header 'Content-Type: application/json' \
---header 'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1692872035%7D' \
+--data '{
+   "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'\''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+}'
+```
+
+```curl --location 'localhost:3000/print/order' \
+--header 'Content-Type: application/json' \
 --data '{
    "orderId": "988798",
    "dateTime": "01/01/2000 12h00",
