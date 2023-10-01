@@ -11,7 +11,7 @@ function lineBreak() {
 }
 
 function footer() {
-  return ' \n' + ' \n' + ' \n' + ' \n' + ' \n' + ' \n' + ' \n' + '. ';
+  return ' \n' + ' \n' + ' \n' + ' \n' + ' \n' + ' \n' + '. ';
 }
 
 function printBuilder(order) {
@@ -20,7 +20,7 @@ function printBuilder(order) {
   content += `PEDIDO #${order.orderId} ${order.dateTime}` + lineBreak();
   content += divisorHeader() + lineBreak();
   content += 'ENREGAR EM ' + lineBreak();
-  content += `${order.deliveryAddress}` + lineBreak();
+  content += `${order.shippingAddress}` + lineBreak();
   content += divisorLine() + lineBreak();
   content += order.isPaid
     ? 'NAO COBRAR DO CLIENTE'
@@ -32,6 +32,9 @@ function printBuilder(order) {
     content +=
       `${product.quantity} ${product.name} ${product.total}` + lineBreak();
   });
+  content += divisorLine() + lineBreak();
+  content += `TAXA DE ENTREGA ${order.shippingTax}` + lineBreak();
+  content += `TOTAL DO PEDIDO ${order.total}` + lineBreak();
   content += footer();
 
   return removeDiacritics(content);
