@@ -1,6 +1,6 @@
 {
   "name": "epson-t20x-node-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create server for printer epson t20x",
   "main": "index.js",
   "repository": "https://github.com/charleston10/epson-t20x-node-server.git",
